@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "install:all": "./scripts/install.sh",
+    "install:all": "./scripts/install-local.sh",
     "start:dev": "./scripts/start-dev.sh",
     "start:frontend": "./scripts/start-dev.sh frontend",
     "start:backend": "./scripts/start-dev.sh backend",
