@@ -34,7 +34,7 @@ start_backend() {
     echo ""
     
     cd wordpress
-    php -S localhost:8080 -c php.ini
+    php -S localhost:8080 -t . index.php
 }
 
 # Verificar argumentos
