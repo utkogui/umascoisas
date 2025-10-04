@@ -1,0 +1,44 @@
+{
+  "name": "woo-headless-ecommerce",
+  "version": "1.0.0",
+  "description": "E-commerce headless com WooCommerce e Next.js",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "install:all": "./scripts/install.sh",
+    "start:dev": "./scripts/start-dev.sh",
+    "start:frontend": "./scripts/start-dev.sh frontend",
+    "start:backend": "./scripts/start-dev.sh backend",
+    "wp:install": "cd wordpress && wp core download && wp config create --dbname=woo_headless --dbuser=root --dbpass= --dbhost=localhost",
+    "wp:setup": "cd wordpress && wp core install --url=localhost:8080 --title='WooCommerce Store' --admin_user=admin --admin_password=admin --admin_email=admin@example.com",
+    "wp:woocommerce": "cd wordpress && wp plugin install woocommerce --activate",
+    "db:setup": "mysql -u root -e 'CREATE DATABASE IF NOT EXISTS woo_headless;'",
+    "setup:all": "npm run db:setup && npm run wp:install && npm run wp:setup && npm run wp:woocommerce && npm install"
+  },
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "tailwindcss": "^3.3.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "axios": "^1.6.0",
+    "swr": "^2.2.0",
+    "react-hook-form": "^7.47.0",
+    "zustand": "^4.4.0",
+    "lucide-react": "^0.292.0",
+    "clsx": "^2.0.0",
+    "class-variance-authority": "^0.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0"
+  }
+}
